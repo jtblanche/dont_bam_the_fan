@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btk5nvfdgbit"]
+
+[ext_resource type="Script" uid="uid://dsc5o73gpy2lq" path="res://SceneManager/scene_manager.gd" id="1_mqdah"]
+
+[node name="SceneManager" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mqdah")

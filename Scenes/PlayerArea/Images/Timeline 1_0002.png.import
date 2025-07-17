@@ -1,0 +1,20 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture2D"
+uid="uid://063tlubnxy57"
+path="res://.godot/imported/Timeline 1_0002.png-875d07ada131c4fac791c143e5129b5e.res"
+group_file="uid://i5tu7lxoymwj"
+valid=true
+[deps]
+
+
+source_file="res://Scenes/PlayerArea/Images/Timeline 1_0002.png"
+dest_files=["res://.godot/imported/Timeline 1_0002.png-875d07ada131c4fac791c143e5129b5e.res"]
+
+[params]
+
+atlas_file="uid://i5tu7lxoymwj"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=false

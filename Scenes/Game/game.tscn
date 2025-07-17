@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfh3cad2ox17g"]
+
+[ext_resource type="PackedScene" uid="uid://crlmy13e2v4ap" path="res://Scenes/PlayerBox/player_box.tscn" id="1_mv0hc"]
+[ext_resource type="Script" uid="uid://0iqwomeqpbs2" path="res://Scenes/Game/game.gd" id="1_qxfds"]
+[ext_resource type="AudioStream" uid="uid://dbwsogbgauryf" path="res://Scenes/Game/audio/fight_looped.wav" id="3_qikps"]
+
+[node name="Game" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxfds")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.0690483, 0.112048, 0.153996, 1)
+
+[node name="PlayerContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBox" type="HBoxContainer" parent="PlayerContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TopBoxLeftMargin" type="MarginContainer" parent="PlayerContainer/TopBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="PlayerTopBox1" parent="PlayerContainer/TopBox" instance=ExtResource("1_mv0hc")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+border_size = 2
+corner = 0
+
+[node name="PlayerTopBox2" parent="PlayerContainer/TopBox" instance=ExtResource("1_mv0hc")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+border_size = 2
+corner = 1
+
+[node name="TopBoxRightMargin" type="MarginContainer" parent="PlayerContainer/TopBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="BottomBox" type="HBoxContainer" parent="PlayerContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="BottomBoxLeftMargin" type="MarginContainer" parent="PlayerContainer/BottomBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="PlayerBottomBox1" parent="PlayerContainer/BottomBox" instance=ExtResource("1_mv0hc")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+border_size = 2
+corner = 3
+
+[node name="PlayerBottomBox2" parent="PlayerContainer/BottomBox" instance=ExtResource("1_mv0hc")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+border_size = 2
+corner = 2
+
+[node name="BottomBoxRightMargin" type="MarginContainer" parent="PlayerContainer/BottomBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="AddPlayerBottomContainer" type="MarginContainer" parent="PlayerContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerContainer/AddPlayerBottomContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerContainer/AddPlayerBottomContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "Press Start/Enter to Join!"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_qikps")
+volume_db = -10.375

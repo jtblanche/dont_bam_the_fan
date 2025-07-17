@@ -1,0 +1,245 @@
+[gd_scene load_steps=16 format=3 uid="uid://cdutlfp2wb1mn"]
+
+[ext_resource type="Script" uid="uid://d3bri73mbwfqf" path="res://title/title.gd" id="1_yx5l7"]
+[ext_resource type="Texture2D" uid="uid://i5tu7lxoymwj" path="res://Scenes/PlayerArea/Images/GullyAtlas.png" id="2_crako"]
+[ext_resource type="Texture2D" uid="uid://c1qu6wdte11mh" path="res://Scenes/EnemyArea/Images/FrankenAtlas.png" id="3_6s8lb"]
+[ext_resource type="Texture2D" uid="uid://ds2kxvs3chgyx" path="res://Scenes/EnemyArea/Images/AudienceAtlas.png" id="3_nx56k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crako"]
+atlas = ExtResource("2_crako")
+region = Rect2(0, 0, 4096, 4008)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx56k"]
+atlas = ExtResource("2_crako")
+region = Rect2(0, 4008, 4096, 4008)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s8lb"]
+atlas = ExtResource("2_crako")
+region = Rect2(0, 8016, 4096, 4008)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx56k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crako")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crako")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx56k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s8lb")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64gp6"]
+atlas = ExtResource("3_6s8lb")
+region = Rect2(0, 0, 4096, 4008)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bwyn"]
+atlas = ExtResource("3_6s8lb")
+region = Rect2(0, 4008, 4096, 4008)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0tjwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64gp6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64gp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bwyn")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xu2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crako")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crako")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx56k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s8lb")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xu2e"]
+atlas = ExtResource("3_nx56k")
+region = Rect2(0, 4008, 4096, 4008)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tjwc"]
+atlas = ExtResource("3_nx56k")
+region = Rect2(0, 8016, 4096, 4008)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6s8lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xu2e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xu2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tjwc")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[node name="Title" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yx5l7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0.0978625, 0.182598, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/normal_font_size = 400
+text = "Don't Bam The Fan"
+horizontal_alignment = 1
+
+[node name="StartButtonContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 800
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 800
+theme_override_constants/margin_bottom = 50
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../QuitButtonContainer/QuitButton")
+focus_neighbor_top = NodePath("../../QuitButtonContainer/QuitButton")
+focus_neighbor_right = NodePath("../../QuitButtonContainer/QuitButton")
+focus_neighbor_bottom = NodePath("../../QuitButtonContainer/QuitButton")
+focus_next = NodePath("../../QuitButtonContainer/QuitButton")
+focus_previous = NodePath("../../QuitButtonContainer/QuitButton")
+theme_override_font_sizes/font_size = 150
+text = "Start"
+
+[node name="PlayerStartAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 4
+position = Vector2(2274, 107)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_nx56k")
+animation = &"hit"
+
+[node name="EnemyStartAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 4
+position = Vector2(2451, 133)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_0tjwc")
+animation = &"hit"
+
+[node name="QuitButtonContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 800
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 800
+theme_override_constants/margin_bottom = 50
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/QuitButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../StartButtonContainer/StartButton")
+focus_neighbor_top = NodePath("../../StartButtonContainer/StartButton")
+focus_neighbor_right = NodePath("../../StartButtonContainer/StartButton")
+focus_neighbor_bottom = NodePath("../../StartButtonContainer/StartButton")
+focus_next = NodePath("../../StartButtonContainer/StartButton")
+focus_previous = NodePath("../../StartButtonContainer/StartButton")
+theme_override_font_sizes/font_size = 150
+text = "Quit
+"
+
+[node name="PlayerQuitAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/QuitButtonContainer"]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+texture_filter = 4
+position = Vector2(2251, 106.5)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_8xu2e")
+animation = &"hit"
+
+[node name="EnemyQuitAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/QuitButtonContainer"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 4
+position = Vector2(2431, 88)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_6s8lb")
+animation = &"hit"
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/StartButtonContainer/StartButton" to="." method="_on_start_button_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/VBoxContainer/StartButtonContainer/StartButton" to="." method="_on_start_button_focus_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/QuitButtonContainer/QuitButton" to="." method="_on_quit_button_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/VBoxContainer/QuitButtonContainer/QuitButton" to="." method="_on_quit_button_focus_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]

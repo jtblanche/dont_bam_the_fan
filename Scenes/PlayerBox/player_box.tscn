@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://crlmy13e2v4ap"]
+
+[ext_resource type="Script" uid="uid://g8pa43iyed6b" path="res://Scenes/PlayerBox/player_box.gd" id="1_ohvtr"]
+[ext_resource type="PackedScene" uid="uid://ci67mjxxwfq77" path="res://Scenes/PlayerArea/player_area.tscn" id="1_xnokw"]
+
+[node name="PlayerBox" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ohvtr")
+border_size = 4
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.0197841, 0.0723682, 0.17237, 1)
+
+[node name="BorderMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="BorderMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="BorderMarginContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="PlayerArea" parent="BorderMarginContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_xnokw")]
+unique_name_in_owner = true
