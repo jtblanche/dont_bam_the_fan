@@ -1185,7 +1185,9 @@ position = Vector2(-1500, 900)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_3rqkw")
 offset = Vector2(-1100, -700)
-vframes = 4
+hframes = 2
+vframes = 2
+region_rect = Rect2(0, 0, 8000, 8000)
 
 [node name="PlayerAnimationTree" type="AnimationTree" parent="CenterContainer/MarginContainer/PlayArea/PlayerContainer"]
 unique_name_in_owner = true

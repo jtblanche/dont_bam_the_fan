@@ -1,8 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://dymu4m5chajsk"]
 
 [ext_resource type="Script" uid="uid://11a65sn8e5k" path="res://Scenes/EnemyArea/enemy_container.gd" id="1_ayljh"]
-[ext_resource type="Texture2D" uid="uid://bfmqg32xi18ws" path="res://Scenes/EnemyArea/Images/TestEnemyAtlas.png" id="1_dxqyw"]
 [ext_resource type="Texture2D" uid="uid://c1qu6wdte11mh" path="res://Scenes/EnemyArea/Images/FrankenAtlas.png" id="2_a1uis"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ayljh"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ayljh"]
 animation = &"RESET"
@@ -705,8 +706,8 @@ position = Vector2(2400, 950)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_a1uis")
 offset = Vector2(-150, -1000)
-vframes = 5
-frame = 2
+vframes = 2
+region_rect = Rect2(0, 0, 4000, 8000)
 
 [node name="SillhouetteSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -714,10 +715,9 @@ self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 position = Vector2(2400, 950)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_dxqyw")
+texture = SubResource("CompressedTexture2D_ayljh")
 offset = Vector2(-150, -1000)
-vframes = 4
-frame = 3
+vframes = 2
 
 [node name="EnemyAnimationTree" type="AnimationTree" parent="."]
 unique_name_in_owner = true

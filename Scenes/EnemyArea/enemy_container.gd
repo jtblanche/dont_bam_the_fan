@@ -57,15 +57,19 @@ func start():
 				FriendlyEnemies.AUDIENCE_FRIEND:
 					enemy_sprite.texture = AUDIENCE_ATLAS
 					sillhouette_sprite.texture = AUDIENCE_ATLAS
-					enemy_sprite.vframes = 3
-					sillhouette_sprite.vframes = 3
+					enemy_sprite.vframes = 2
+					sillhouette_sprite.vframes = 2
+					enemy_sprite.hframes = 2
+					sillhouette_sprite.hframes = 2
 					enemy_sprite.frame = 1
 					sillhouette_sprite.frame = 2
 				FriendlyEnemies.FRANKEN_FAN:
 					enemy_sprite.texture = FRANKEN_FAN_ATLAS
 					sillhouette_sprite.texture = FRANKEN_FAN_ATLAS
-					enemy_sprite.vframes = 3
-					sillhouette_sprite.vframes = 3
+					enemy_sprite.vframes = 2
+					sillhouette_sprite.vframes = 2
+					enemy_sprite.hframes = 2
+					sillhouette_sprite.hframes = 2
 					enemy_sprite.frame = 1
 					sillhouette_sprite.frame = 2
 			#enemy_sprite.frame = 2
@@ -84,6 +88,8 @@ func start():
 					sillhouette_sprite.texture = FRANKEN_ATLAS
 					enemy_sprite.vframes = 2
 					sillhouette_sprite.vframes = 2
+					enemy_sprite.hframes = 1
+					sillhouette_sprite.hframes = 1
 					enemy_sprite.frame = 0
 					sillhouette_sprite.frame = 1
 				EnemyEnemies.KRAKEN_ENEMY:
@@ -91,20 +97,26 @@ func start():
 					sillhouette_sprite.texture = KRAKEN_ATLAS
 					enemy_sprite.vframes = 2
 					sillhouette_sprite.vframes = 2
+					enemy_sprite.hframes = 1
+					sillhouette_sprite.hframes = 1
 					enemy_sprite.frame = 0
 					sillhouette_sprite.frame = 1
 				EnemyEnemies.AUDIENCE_ENEMY:
 					enemy_sprite.texture = AUDIENCE_ATLAS
 					sillhouette_sprite.texture = AUDIENCE_ATLAS
-					enemy_sprite.vframes = 3
-					sillhouette_sprite.vframes = 3
+					enemy_sprite.vframes = 2
+					sillhouette_sprite.vframes = 2
+					enemy_sprite.hframes = 2
+					sillhouette_sprite.hframes = 2
 					enemy_sprite.frame = 0
 					sillhouette_sprite.frame = 2
 				EnemyEnemies.FRANKEN_FAN_ENEMY:
 					enemy_sprite.texture = FRANKEN_FAN_ATLAS
 					sillhouette_sprite.texture = FRANKEN_FAN_ATLAS
-					enemy_sprite.vframes = 3
-					sillhouette_sprite.vframes = 3
+					enemy_sprite.vframes = 2
+					sillhouette_sprite.vframes = 2
+					enemy_sprite.hframes = 2
+					sillhouette_sprite.hframes = 2
 					enemy_sprite.frame = 0
 					sillhouette_sprite.frame = 2
 	enemy_animation_tree.active = true

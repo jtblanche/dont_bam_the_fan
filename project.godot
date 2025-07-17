@@ -27,6 +27,10 @@ window/size/viewport_height=2160
 window/size/mode=3
 window/stretch/mode="canvas_items"
 
+[editor]
+
+import/atlas_max_width=16384
+
 [input]
 
 ui_accept={
@@ -121,5 +125,4 @@ start_game={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
