@@ -169,10 +169,10 @@ color = Color(0, 0.0978625, 0.182598, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 66
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 66
+theme_override_constants/margin_bottom = 66
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -181,17 +181,17 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
-theme_override_font_sizes/normal_font_size = 400
+theme_override_font_sizes/normal_font_size = 133
 text = "Don't Bam The Fan"
 horizontal_alignment = 1
 
 [node name="StartButtonContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 800
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 800
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 266
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 266
+theme_override_constants/margin_bottom = 16
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
 unique_name_in_owner = true
@@ -203,32 +203,32 @@ focus_neighbor_right = NodePath("../../QuitButtonContainer/QuitButton")
 focus_neighbor_bottom = NodePath("../../QuitButtonContainer/QuitButton")
 focus_next = NodePath("../../QuitButtonContainer/QuitButton")
 focus_previous = NodePath("../../QuitButtonContainer/QuitButton")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 50
 text = "Start"
 
 [node name="PlayerStartAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
 unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
-position = Vector2(2274, 107)
-scale = Vector2(0.125, 0.125)
+position = Vector2(758, 35.667)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_nx56k")
 animation = &"hit"
 
 [node name="EnemyStartAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
 unique_name_in_owner = true
 texture_filter = 4
-position = Vector2(2451, 133)
-scale = Vector2(0.125, 0.125)
+position = Vector2(817, 44.333)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_0tjwc")
 
 [node name="QuitButtonContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 800
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 800
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 266
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 266
+theme_override_constants/margin_bottom = 16
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/QuitButtonContainer"]
 unique_name_in_owner = true
@@ -240,7 +240,7 @@ focus_neighbor_right = NodePath("../../StartButtonContainer/StartButton")
 focus_neighbor_bottom = NodePath("../../StartButtonContainer/StartButton")
 focus_next = NodePath("../../StartButtonContainer/StartButton")
 focus_previous = NodePath("../../StartButtonContainer/StartButton")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 50
 text = "Quit
 "
 
@@ -248,16 +248,16 @@ text = "Quit
 unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
-position = Vector2(2251, 106.5)
-scale = Vector2(0.125, 0.125)
+position = Vector2(750.333, 35.5)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_8xu2e")
 animation = &"hit"
 
 [node name="EnemyQuitAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/QuitButtonContainer"]
 unique_name_in_owner = true
 texture_filter = 4
-position = Vector2(2431, 88)
-scale = Vector2(0.125, 0.125)
+position = Vector2(810.333, 29.333)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_6s8lb")
 animation = &"hit"
 

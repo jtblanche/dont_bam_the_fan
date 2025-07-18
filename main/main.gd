@@ -50,13 +50,13 @@ func update_label_positioning() -> void:
 	milliseconds_label.remove_theme_font_size_override("font_size")
 	score_margin_container.remove_theme_constant_override("margin_bottom")
 	if active_players.size() <= 1:
-		time_label.add_theme_font_size_override("font_size", 300)
-		milliseconds_label.add_theme_font_size_override("font_size", 200)
-		score_margin_container.add_theme_constant_override("margin_bottom", -20)
+		time_label.add_theme_font_size_override("font_size", 100)
+		milliseconds_label.add_theme_font_size_override("font_size", 67)
+		score_margin_container.add_theme_constant_override("margin_bottom", -7)
 		score_alignment.alignment = BoxContainer.ALIGNMENT_END
 		return
-	time_label.add_theme_font_size_override("font_size", 150)
-	milliseconds_label.add_theme_font_size_override("font_size", 100)
+	time_label.add_theme_font_size_override("font_size", 50)
+	milliseconds_label.add_theme_font_size_override("font_size", 33)
 	score_alignment.alignment =BoxContainer.ALIGNMENT_CENTER
 
 var connection_changes_allowed: bool = true

@@ -257,10 +257,10 @@ color = Color(0, 0.0978625, 0.182598, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 66
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 66
+theme_override_constants/margin_bottom = 66
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -269,7 +269,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
-theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/normal_font_size = 66
 text = "How To Play"
 horizontal_alignment = 1
 
@@ -285,7 +285,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/normal_font_size = 50
 text = "1. Play for your fans"
 horizontal_alignment = 1
 
@@ -293,7 +293,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 33
 text = "(by pressing Left Trigger
 or Left Arrow)"
 horizontal_alignment = 1
@@ -306,14 +306,14 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
-position = Vector2(494, 189)
-scale = Vector2(0.25, 0.25)
+position = Vector2(164.667, 63)
+scale = Vector2(0.083, 0.083)
 sprite_frames = SubResource("SpriteFrames_3cmws")
 
 [node name="EnemyStep1Sprite" type="Sprite2D" parent="MarginContainer/VBoxContainer/Step1Container/MarginContainer"]
 texture_filter = 4
-position = Vector2(814, 213)
-scale = Vector2(0.25, 0.25)
+position = Vector2(271.333, 71)
+scale = Vector2(0.083, 0.083)
 texture = ExtResource("3_15vtu")
 hframes = 2
 vframes = 2
@@ -331,7 +331,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/normal_font_size = 50
 text = "2. Hit anyone else"
 horizontal_alignment = 1
 
@@ -339,7 +339,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 33
 text = "(by pressing Right Trigger 
 or Right Arrow)"
 horizontal_alignment = 1
@@ -352,16 +352,16 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
-position = Vector2(1149, 157)
-scale = Vector2(0.25, 0.25)
+position = Vector2(383, 52.333)
+scale = Vector2(0.083, 0.083)
 sprite_frames = SubResource("SpriteFrames_15vtu")
 animation = &"hit"
 
 [node name="EnemyStep2Animation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/Step2Container/MarginContainer"]
 unique_name_in_owner = true
 texture_filter = 4
-position = Vector2(1519, 218)
-scale = Vector2(0.25, 0.25)
+position = Vector2(506.333, 72.667)
+scale = Vector2(0.083, 0.083)
 sprite_frames = SubResource("SpriteFrames_1qq82")
 animation = &"hit"
 
@@ -387,26 +387,24 @@ focus_neighbor_right = NodePath("../../NextButtonContainer/NextButton")
 focus_neighbor_bottom = NodePath("../../NextButtonContainer/NextButton")
 focus_next = NodePath("../../NextButtonContainer/NextButton")
 focus_previous = NodePath("../../NextButtonContainer/NextButton")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 50
 text = "Back
 "
 
 [node name="PlayerBackAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/BackButtonContainer"]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 texture_filter = 4
-position = Vector2(1398, 71)
-scale = Vector2(0.125, 0.125)
+position = Vector2(466, 23.667)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_01hw1")
 animation = &"hit"
 
 [node name="EnemyBackAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/BackButtonContainer"]
 unique_name_in_owner = true
-visible = false
 texture_filter = 4
-position = Vector2(1569, 100)
-scale = Vector2(0.125, 0.125)
+position = Vector2(523, 33.333)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_d1qj3")
 animation = &"hit"
 
@@ -427,25 +425,23 @@ focus_neighbor_right = NodePath("../../BackButtonContainer/BackButton")
 focus_neighbor_bottom = NodePath("../../BackButtonContainer/BackButton")
 focus_next = NodePath("../../BackButtonContainer/BackButton")
 focus_previous = NodePath("../../BackButtonContainer/BackButton")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 50
 text = "Next
 "
 
 [node name="PlayerNextAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/NextButtonContainer"]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 texture_filter = 4
-position = Vector2(1429, 103)
-scale = Vector2(0.125, 0.125)
+position = Vector2(476.333, 34.333)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_shjhj")
 
 [node name="EnemyNextAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/NextButtonContainer"]
 unique_name_in_owner = true
-visible = false
 texture_filter = 4
-position = Vector2(1609, 84.5)
-scale = Vector2(0.125, 0.125)
+position = Vector2(536.333, 28.167)
+scale = Vector2(0.042, 0.042)
 sprite_frames = SubResource("SpriteFrames_bhejb")
 animation = &"hit"
 

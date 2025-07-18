@@ -92,7 +92,7 @@ size_flags_stretch_ratio = 11.0
 [node name="AddPlayerBottomContainer" type="MarginContainer" parent="PlayerContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(0, 360)
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="PlayerContainer/AddPlayerBottomContainer"]
@@ -100,7 +100,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PlayerContainer/AddPlayerBottomContainer/CenterContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 66
 text = "Press Start/Enter to Join!"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
