@@ -75,6 +75,7 @@ func _update_solo() -> void:
 		border_size = new_border_size
 		_update_border_size()
 
+var previous_player_count: int = -1
 func _update_player_boxes():
 	if bottom_box_right_margin == null:
 		return
@@ -89,6 +90,9 @@ func _update_player_boxes():
 	bottom_box_left_margin.size_flags_stretch_ratio = 11
 	bottom_box_right_margin.size_flags_stretch_ratio = 11
 	if player1 == null: # 0 Players Have Locked In
+		if previous_player_count == 0:
+			return
+		previous_player_count = 0
 		# update player 1 box margins:
 		top_box_left_margin.hide()
 		top_box_right_margin.hide()
@@ -106,6 +110,9 @@ func _update_player_boxes():
 		# Add Player Visibility:
 		add_player_bottom_container.hide()
 	elif player2 == null: # 1 Player Has Locked In
+		if previous_player_count == 1:
+			return
+		previous_player_count = 1
 		# update player 1 box margins:
 		top_box_left_margin.show()
 		top_box_right_margin.show()
@@ -125,6 +132,9 @@ func _update_player_boxes():
 		top_box_left_margin.size_flags_stretch_ratio = 2
 		top_box_right_margin.size_flags_stretch_ratio = 2
 	elif player3 == null: # 2 Players Have Locked In
+		if previous_player_count == 2:
+			return
+		previous_player_count = 2
 		# set player 2:
 		player_bottom_box_1.player = player2
 		
@@ -155,6 +165,9 @@ func _update_player_boxes():
 		top_box_left_margin.size_flags_stretch_ratio = 11
 		top_box_right_margin.size_flags_stretch_ratio = 11
 	elif player4 == null: # 3 Players Have Locked In
+		if previous_player_count == 3:
+			return
+		previous_player_count = 3
 		# set player 2:
 		player_top_box_2.player = player2
 		# set player 3:
@@ -183,6 +196,9 @@ func _update_player_boxes():
 		top_box_left_margin.size_flags_stretch_ratio = 2
 		top_box_right_margin.size_flags_stretch_ratio = 2
 	else: # 4 Players Have Locked In
+		if previous_player_count == 4:
+			return
+		previous_player_count = 4
 		# set player 2:
 		player_top_box_2.player = player2
 		# set player 3:
@@ -293,6 +309,14 @@ func start_game() -> void:
 	player_top_box_2.start_game()
 	player_bottom_box_1.start_game()
 	player_bottom_box_2.start_game()
+	if player1 != null:
+		player1.start_game()
+	if player2 != null:
+		player2.start_game()
+	if player3 != null:
+		player3.start_game()
+	if player4 != null:
+		player4.start_game()
 	var tween: Tween = create_tween()
 	tween.tween_callback(start_music).set_delay(0.75)
 
@@ -305,7 +329,14 @@ func end_game() -> void:
 	player_top_box_2.end_game()
 	player_bottom_box_1.end_game()
 	player_bottom_box_2.end_game()
-	var tween: Tween = create_tween()
+	if player1 != null:
+		player1.end_game()
+	if player2 != null:
+		player2.end_game()
+	if player3 != null:
+		player3.end_game()
+	if player4 != null:
+		player4.end_game()
 	music_player.volume_db = QUIET_VOLUME
 	_update_player_boxes()
 

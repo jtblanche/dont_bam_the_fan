@@ -1,5 +1,8 @@
-extends MarginContainer
+extends CanvasLayer
 class_name SceneManager
+
+@onready var scene_container: MarginContainer = %SceneContainer
+
 static var TITLE_SCENE: PackedScene = preload("res://title/title.tscn")
 static var MAIN_SCENE: PackedScene = preload("res://main/main.tscn")
 static var HOW_TO_PLAY_SCENE: PackedScene = preload("res://HowToPlay/HowToPlay.tscn")
@@ -21,24 +24,24 @@ func load_scene(type: SceneType):
 			unload_scene()
 			current_scene_type = type
 			current_scene = MAIN_SCENE.instantiate()
-			add_child(current_scene)
+			scene_container.add_child(current_scene)
 		SceneType.TITLE:
 			unload_scene()
 			current_scene_type = type
 			current_scene = TITLE_SCENE.instantiate()
-			add_child(current_scene)
+			scene_container.add_child(current_scene)
 		SceneType.HOW_TO_PLAY:
 			unload_scene()
 			current_scene_type = type
 			current_scene = HOW_TO_PLAY_SCENE.instantiate()
-			add_child(current_scene)
+			scene_container.add_child(current_scene)
 
 func unload_scene():
 	current_scene_type = SceneType.LOADING
-	remove_child(current_scene)
+	scene_container.remove_child(current_scene)
 	current_scene.queue_free()
 	current_scene = null
 
 func _ready() -> void:
 	scene_manager = self
-	add_child(current_scene)
+	scene_container.add_child(current_scene)

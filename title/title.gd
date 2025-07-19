@@ -30,6 +30,8 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	#if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
+		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if _any_pressed:
 		return
 	_start_was_pressed = true

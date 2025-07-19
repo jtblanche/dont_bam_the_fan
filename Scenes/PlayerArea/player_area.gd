@@ -6,10 +6,10 @@ class_name PlayerArea
 @onready var player_animation_tree: AnimationTree = %PlayerAnimationTree
 @onready var player_animation_player: AnimationPlayer = %PlayerAnimationPlayer
 @onready var status_animation_player: AnimationPlayer = %StatusAnimationPlayer
-@onready var enemy_area: MarginContainer = %EnemyArea
 @onready var score_label: Label = %Score
 @onready var status_text: RichTextLabel = %"Status Text"
 @onready var background_color_rect: ColorRect = %BackgroundColorRect
+@onready var enemy_area: MarginContainer = %EnemyArea
 
 var enemy_container: EnemyContainer = null
 
@@ -54,10 +54,10 @@ func _set_player_ready() -> void:
 	if player.player_index == 0:
 		start_placeholder_text += "\nPress Start/Enter\nto Begin Game"
 		status_text.remove_theme_font_size_override("normal_font_size")
-		status_text.add_theme_font_size_override("normal_font_size", 90)
+		status_text.add_theme_font_size_override("normal_font_size", 30)
 	else:
 		status_text.remove_theme_font_size_override("normal_font_size")
-		status_text.add_theme_font_size_override("normal_font_size", 120)
+		status_text.add_theme_font_size_override("normal_font_size", 40)
 	status_text.text = start_placeholder_text
 		
 func _set_player_waiting() -> void:

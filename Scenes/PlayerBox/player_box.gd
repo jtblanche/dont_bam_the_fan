@@ -31,24 +31,24 @@ class SupportingInfo:
 	var double_margins: PackedStringArray = []
 	
 	func _init(
-		positive_margins: PackedStringArray = [],
-		negative_margins: PackedStringArray = [],
-		double_margins: PackedStringArray = []
+		p_positive_margins: PackedStringArray = [],
+		p_negative_margins: PackedStringArray = [],
+		p_double_margins: PackedStringArray = []
 	) -> void:
-		self.positive_margins = positive_margins
-		self.negative_margins = negative_margins
-		self.double_margins = double_margins
+		positive_margins = p_positive_margins
+		negative_margins = p_negative_margins
+		double_margins = p_double_margins
 
 class CornerInfo:
 	var margin_changes: PackedStringArray = []
 	var supporting_margin_info: Dictionary[PlayerBox.Corner, SupportingInfo] = {}
 	
 	func _init(
-		margin_changes: PackedStringArray = [],
-		supporting_margin_info: Dictionary[PlayerBox.Corner, SupportingInfo] = {}
+		p_margin_changes: PackedStringArray = [],
+		p_supporting_margin_info: Dictionary[PlayerBox.Corner, SupportingInfo] = {}
 	) -> void:
-		self.margin_changes = margin_changes
-		self.supporting_margin_info = supporting_margin_info
+		margin_changes = p_margin_changes
+		supporting_margin_info = p_supporting_margin_info
 
 static var _all_theme_constants: PackedStringArray = ["margin_right", "margin_bottom", "margin_left", "margin_top"]
 
@@ -194,20 +194,20 @@ func enter_solo() -> void:
 	tween.tween_method(set_solo_current_margin_size, 0, solo_margin_size, solo_tween_duration)
 	tween.tween_callback(end_solo_margin_size)
 
-func set_solo_current_margin_size(new_current_solo_margin_size) -> void:
+func set_solo_current_margin_size(new_current_solo_margin_size: float) -> void:
 	current_solo_margin_size = new_current_solo_margin_size
 	for theme_property in _all_theme_constants:
 		remove_theme_constant_override(theme_property)
 	for theme_property in _corner_info.margin_changes:
 		remove_theme_constant_override(theme_property)
-		add_theme_constant_override(theme_property, -current_solo_margin_size)
+		add_theme_constant_override(theme_property, -current_solo_margin_size as int)
 
 func set_solo_final_margin_size() -> void:
 	for theme_property in _all_theme_constants:
 		remove_theme_constant_override(theme_property)
 	for theme_property in _corner_info.margin_changes:
 		remove_theme_constant_override(theme_property)
-		add_theme_constant_override(theme_property, -solo_margin_size)
+		add_theme_constant_override(theme_property, -solo_margin_size as int)
 
 func end_solo_margin_size() -> void:
 	set_solo_final_margin_size()
@@ -233,22 +233,22 @@ func set_supporting_current_margin_size(new_current_solo_margin_size) -> void:
 		remove_theme_constant_override(theme_property)
 	var supporting_margin_info = _corner_info.supporting_margin_info.get(_supporting_corner)
 	for theme_property in supporting_margin_info.positive_margins:
-		add_theme_constant_override(theme_property, current_solo_margin_size)
+		add_theme_constant_override(theme_property, current_solo_margin_size as int)
 	for theme_property in supporting_margin_info.negative_margins:
-		add_theme_constant_override(theme_property, -current_solo_margin_size)
+		add_theme_constant_override(theme_property, -current_solo_margin_size as int)
 	for theme_property in supporting_margin_info.double_margins:
-		add_theme_constant_override(theme_property, 2 * current_solo_margin_size)
+		add_theme_constant_override(theme_property, (2 * current_solo_margin_size) as int)
 
 func set_supporting_final_margin_size() -> void:
 	for theme_property in _all_theme_constants:
 		remove_theme_constant_override(theme_property)
 	var supporting_margin_info = _corner_info.supporting_margin_info.get(_supporting_corner)
 	for theme_property in supporting_margin_info.positive_margins:
-		add_theme_constant_override(theme_property, solo_margin_size)
+		add_theme_constant_override(theme_property, solo_margin_size as int)
 	for theme_property in supporting_margin_info.negative_margins:
-		add_theme_constant_override(theme_property, -solo_margin_size)
+		add_theme_constant_override(theme_property, -solo_margin_size as int)
 	for theme_property in supporting_margin_info.double_margins:
-		add_theme_constant_override(theme_property, 2 * solo_margin_size)
+		add_theme_constant_override(theme_property, (2 * solo_margin_size) as int)
 
 func end_supporting_margin_size() -> void:
 	set_supporting_final_margin_size()

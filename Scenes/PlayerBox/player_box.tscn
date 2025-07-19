@@ -29,9 +29,14 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="BorderMarginContainer/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1280, 720)
-size_2d_override = Vector2i(1920, 1080)
+size_2d_override = Vector2i(640, 360)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="PlayerArea" parent="BorderMarginContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_xnokw")]
+[node name="CanvasLayer" type="CanvasLayer" parent="BorderMarginContainer/SubViewportContainer/SubViewport"]
+
+[node name="PlayerArea" parent="BorderMarginContainer/SubViewportContainer/SubViewport/CanvasLayer" instance=ExtResource("1_xnokw")]
 unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="BorderMarginContainer/SubViewportContainer/SubViewport/CanvasLayer"]
+position = Vector2(320, 180)

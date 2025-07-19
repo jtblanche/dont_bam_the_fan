@@ -97,7 +97,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1500, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-430, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -108,7 +108,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(900, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "value"
@@ -143,7 +143,7 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1100, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-366.667, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/6/type = "bezier"
@@ -154,7 +154,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-700, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-233.333, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -197,9 +197,9 @@ tracks/2/path = NodePath("CenterContainer/MarginContainer/PlayArea/PlayerContain
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 100, -0.2, 0, 0.2, 0, 368, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.4, 1)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(103.333, -0.25, 0, 0.25, 0, 103.333, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -208,9 +208,9 @@ tracks/3/path = NodePath("CenterContainer/MarginContainer/PlayArea/PlayerContain
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(900, -0.25, 0, 0.25, 0, 900, -0.2, 0, 0.2, 0, 800, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.4, 1)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -221,7 +221,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -231,8 +231,8 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1100, -0.25, 0, 0.25, 0, 1100, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(366.667, -0.25, 0, 0.25, 0, 366.667, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
@@ -242,8 +242,8 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-700, -0.25, 0, 0.25, 0, -700, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(-233.333, -0.25, 0, 0.25, 0, -233.333, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 
 [sub_resource type="Animation" id="Animation_2vkfw"]
@@ -257,7 +257,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(103.333, -0.25, 0, 0.25, 0, 103.333, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
@@ -268,7 +268,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(900, -0.25, 0, 0.25, 0, 900, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
@@ -302,7 +302,7 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1100, -0.25, 0, 0.25, 0, 1100, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(366.667, -0.25, 0, 0.25, 0, 366.667, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/5/type = "bezier"
@@ -313,7 +313,7 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-700, -0.25, 0, 0.25, 0, -700, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-233.333, -0.25, 0, 0.25, 0, -233.333, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/6/type = "value"
@@ -331,6 +331,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_aeoa7"]
 resource_name = "player_move_onscreen"
+length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -338,9 +339,9 @@ tracks/0/path = NodePath("CenterContainer/MarginContainer/PlayArea/PlayerContain
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, -0.044, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, -0.044, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, -0.044, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, -0.044, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, -0.044, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -350,8 +351,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, -1500, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(103.333, -0.25, 0, 0.25, 0, -430, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -361,8 +362,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(900, -0.25, 0, 0.25, 0, 900, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -384,8 +385,8 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1100, -0.25, 0, 0.25, 0, 1100, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(366.667, -0.25, 0, 0.25, 0, 366.667, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -395,8 +396,8 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-700, -0.25, 0, 0.25, 0, -700, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(-233.333, -0.25, 0, 0.25, 0, -233.333, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 
 [sub_resource type="Animation" id="Animation_ey2pk"]
@@ -421,7 +422,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1500, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-430, -0.25, 0, 0.25, 0, 103.333, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.4)
 }
 tracks/2/type = "bezier"
@@ -432,7 +433,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(900, -0.25, 0, 0.25, 0, 900, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.4)
 }
 tracks/3/type = "value"
@@ -455,7 +456,7 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1100, -0.25, 0, 0.25, 0, -1100, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-366.667, -0.25, 0, 0.25, 0, -366.667, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.4)
 }
 tracks/5/type = "bezier"
@@ -466,7 +467,7 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-700, -0.25, 0, 0.25, 0, -700, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-233.333, -0.25, 0, 0.25, 0, -233.333, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.4)
 }
 
@@ -509,9 +510,9 @@ tracks/2/path = NodePath("CenterContainer/MarginContainer/PlayArea/PlayerContain
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 100, -0.2, 0, 0.2, 0, 368, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.4, 1)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(103.333, -0.25, 0, 0.25, 0, 103.333, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -520,9 +521,9 @@ tracks/3/path = NodePath("CenterContainer/MarginContainer/PlayArea/PlayerContain
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(900, -0.25, 0, 0.25, 0, 900, -0.2, 0, 0.2, 0, 800, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.4, 1)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -531,9 +532,9 @@ tracks/4/path = NodePath("CenterContainer/MarginContainer/PlayArea/PlayerContain
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.244346, -0.2, 0, 0.2, 0, 0, -0.2, 0, 0.2, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.0960208, 0.4, 1)
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.244346, -0.2, 0, 0.2, 0, 0, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.0960208, 0.4)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -543,8 +544,8 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1100, -0.25, 0, 0.25, 0, 1100, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(366.667, -0.25, 0, 0.25, 0, 366.667, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
@@ -554,8 +555,8 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-700, -0.25, 0, 0.25, 0, -700, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(-233.333, -0.25, 0, 0.25, 0, -233.333, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pfd56"]
@@ -570,10 +571,10 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rqkw"]
 bg_color = Color(0, 0.0627451, 0.156863, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="Animation" id="Animation_pfti1"]
 length = 0.001
@@ -1146,8 +1147,6 @@ script = ExtResource("1_m8ihi")
 
 [node name="BooingPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="AudioAnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0.162066, 0.162066, 0.162066, 1)
@@ -1166,13 +1165,13 @@ color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 layout_mode = 2
 
 [node name="PlayerContainer" type="MarginContainer" parent="CenterContainer/MarginContainer/PlayArea"]
-custom_minimum_size = Vector2(750, 900)
+custom_minimum_size = Vector2(250, 300)
 layout_mode = 2
 
 [node name="LeftPlaceholderLabel" type="RichTextLabel" parent="CenterContainer/MarginContainer/PlayArea/PlayerContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 33
 text = "Join!
 Push Start!"
 vertical_alignment = 1
@@ -1181,16 +1180,17 @@ vertical_alignment = 1
 unique_name_in_owner = true
 z_index = 10
 texture_filter = 4
-position = Vector2(-1500, 900)
-scale = Vector2(0.45, 0.45)
+position = Vector2(-430, 270)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_3rqkw")
-offset = Vector2(-1100, -700)
+offset = Vector2(-366.667, -233.333)
 hframes = 2
 vframes = 2
 region_rect = Rect2(0, 0, 8000, 8000)
 
 [node name="PlayerAnimationTree" type="AnimationTree" parent="CenterContainer/MarginContainer/PlayArea/PlayerContainer"]
 unique_name_in_owner = true
+active = false
 root_node = NodePath("%PlayerAnimationTree/../../../../..")
 tree_root = SubResource("AnimationNodeStateMachine_3rqkw")
 advance_expression_base_node = NodePath("../../../../..")
@@ -1205,16 +1205,16 @@ libraries = {
 
 [node name="EnemyArea" type="MarginContainer" parent="CenterContainer/MarginContainer/PlayArea"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(750, 900)
+custom_minimum_size = Vector2(250, 300)
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(800, 800)
+custom_minimum_size = Vector2(266.667, 266.667)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 16
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
@@ -1236,7 +1236,7 @@ unique_name_in_owner = true
 z_index = 21
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 33
 text = "0"
 horizontal_alignment = 1
 
@@ -1245,7 +1245,7 @@ unique_name_in_owner = true
 z_index = 21
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/normal_font_size = 40
 text = "Press
 Start/Enter
 to Join!"
@@ -1263,7 +1263,7 @@ color = Color(1, 0.388235, 0.380392, 1)
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/StageBackground"]
 self_modulate = Color(0.633757, 0.633757, 0.633757, 1)
-custom_minimum_size = Vector2(1920, 1080)
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 2
 texture = ExtResource("3_3rqkw")
 expand_mode = 3
@@ -1274,3 +1274,6 @@ root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_4f6wt")
 }
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/StageBackground"]
+layout_mode = 2

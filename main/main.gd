@@ -15,8 +15,11 @@ class_name MainScene
 
 const TOTAL_TIME := 60.0 # 2 minutes in seconds
 var time_left := 0.0
+var game_is_running: bool = false
 
 func _process(delta: float) -> void:
+	if !game_is_running:
+		return
 	if time_left > 0.0:
 		time_left = max(0.0, time_left - delta)
 		update_label()
@@ -24,13 +27,14 @@ func _process(delta: float) -> void:
 		time_left = 0.0
 		update_label()
 		game.end_game()
+		game_is_running = false
 		connection_changes_allowed = true
 		update_label_positioning()
 
 func update_label() -> void:
 	if time_left >= 60.0:
-		var minutes := int(time_left) / 60
-		var seconds := int(time_left) % 60
+		var minutes := floori(time_left / 60.0)
+		var seconds := floori(time_left) % 60
 		time_label.text = "%d:%02d" % [minutes, seconds]
 	elif time_left >= 10.0:
 		var seconds := int(time_left) % 60
@@ -65,7 +69,6 @@ var available_players: Array[Player] = []
 var active_players: Array[Player] = []
 var device_to_player_lookup: Dictionary[int, Player] = {}
 #var player_to_device_lookup: Dictionary[Player, int] = {}
-
 func _reset_players():
 	var player1 = active_players[0] if active_players.size() >= 1 else null
 	if player1 != null:
@@ -88,16 +91,31 @@ func _reset_players():
 		player4.player_index = 3
 	game.player4 = player4
 
+func _check_is_action_pressed_disconnect_player(event: InputEvent) -> bool:
+	var viewport_visible_rect: Rect2 = get_viewport().get_visible_rect()
+	var touch_event: Player.TouchInputResult = Player.get_touch_event(event, viewport_visible_rect)
+	match touch_event:
+		Player.TouchInputResult.LEFT_SIDE:
+			return true
+		Player.TouchInputResult.RIGHT_SIDE:
+			return false
+		Player.TouchInputResult.RELEASED:
+			return false
+		Player.TouchInputResult.OFFSCREEN_TOUCH:
+			return false
+		Player.TouchInputResult.NOT_TOUCH:
+			return event.is_action_pressed("disconnect_player")
+	return false
+
 func _check_input_for_disconnects(event: InputEvent):
-	if !event.is_action_pressed("disconnect_player"):
+	if !_check_is_action_pressed_disconnect_player(event):
 		return
 	if active_players.size() <= 0 :
 		SceneManager.scene_manager.load_scene(SceneManager.SceneType.TITLE)
 		return
-	var device_id: int = event.device
+	var device_id: int = Player.get_device_id(event)
 	if !device_to_player_lookup.has(device_id):
 		return
-	print("disconnecting player...")
 	var player: Player = device_to_player_lookup.get(device_id)
 	player.deactivate()
 	active_players.remove_at(active_players.find(player))
@@ -105,45 +123,68 @@ func _check_input_for_disconnects(event: InputEvent):
 	available_players.append(player)
 	device_to_player_lookup.erase(device_id)
 	#player_to_device_lookup.erase(player)
-		
 
+func _check_is_action_pressed_connect_player(event: InputEvent) -> bool:
+	var viewport_visible_rect: Rect2 = get_viewport().get_visible_rect()
+	var touch_event: Player.TouchInputResult = Player.get_touch_event(event, viewport_visible_rect)
+	match touch_event:
+		Player.TouchInputResult.LEFT_SIDE:
+			return false
+		Player.TouchInputResult.RIGHT_SIDE:
+			return true
+		Player.TouchInputResult.RELEASED:
+			return false
+		Player.TouchInputResult.OFFSCREEN_TOUCH:
+			return false
+		Player.TouchInputResult.NOT_TOUCH:
+			return event.is_action_pressed("connect_player")
+	return false
+	
 func _check_input_for_connects(event: InputEvent):
-	var device_id: int = event.device
-	if active_players.size() >= 4 or device_to_player_lookup.has(event.device):
+	var device_id: int = Player.get_device_id(event)
+	if active_players.size() >= 4 or device_to_player_lookup.has(device_id):
 		return
-	if event.is_action_pressed("connect_player"):
-		print("connecting player...")
+	if _check_is_action_pressed_connect_player(event):
 		var player: Player = available_players.pop_back()
 		player.activate(device_id)
 		active_players.append(player)
 		device_to_player_lookup.set(device_id, player)
 		_reset_players()
 		#player_to_device_lookup.set(player, device_id)
-		
+
+func _check_is_action_pressed_start_game(event: InputEvent) -> bool:
+	var viewport_visible_rect: Rect2 = get_viewport().get_visible_rect()
+	var touch_event: Player.TouchInputResult = Player.get_touch_event(event, viewport_visible_rect)
+	match touch_event:
+		Player.TouchInputResult.LEFT_SIDE:
+			return false
+		Player.TouchInputResult.RIGHT_SIDE:
+			return true
+		Player.TouchInputResult.RELEASED:
+			return false
+		Player.TouchInputResult.OFFSCREEN_TOUCH:
+			return false
+		Player.TouchInputResult.NOT_TOUCH:
+			return event.is_action_pressed("start_game")
+	return false
 
 func _check_for_start_game(event: InputEvent):
-	var device_id: int = event.device
+	var device_id: int = Player.get_device_id(event)
 	if active_players.size() <= 0 or !device_to_player_lookup.has(device_id):
 		return
 	var player: Player = device_to_player_lookup.get(device_id)
 	var active_player_index: int = active_players.find(player)
 	if active_player_index != 0:
 		return
-	if event.is_action_pressed("start_game"):
+	if _check_is_action_pressed_start_game(event):
 		if connection_changes_allowed:
-			print("stopping connection changes.")
 			time_left = TOTAL_TIME
+			game_is_running = true
 			milliseconds_label.text = ""
 			update_label()
 			game.start_game()
 			connection_changes_allowed = false
 			update_label_positioning()
-		#else:
-			#print("re-enabling connection changes.")
-			#time_left = 0.0
-			#update_label()
-			#game.end_game()
-			#connection_changes_allowed = true
 
 func _check_connection_changes(event: InputEvent):
 	if !connection_changes_allowed:
@@ -170,3 +211,31 @@ func _reset() -> void:
 
 func _ready() -> void:
 	_reset()
+	print("Scanning for nodes with zero scale...")
+	find_zero_scale_in_tree(get_tree().root)
+	print("Scan complete.")
+
+func find_zero_scale_in_tree(node: Node):
+	# Check the current node
+	print("object_name: ", node.name)
+	check_node_scale(node)
+
+	# Recursively check children
+	for child in node.get_children():
+		find_zero_scale_in_tree(child)
+
+func check_node_scale(node: Node):
+	if node is Node2D:
+		var scale_2d: Vector2 = node.scale
+		if is_zero_approx(scale_2d.x) or is_zero_approx(scale_2d.y):
+			print("Node2D with zero scale component found: ", node.get_path(), " Scale: ", scale_2d)
+		else:
+			print("Node2D with scale component found: ", node.get_path(), " Scale: ", scale_2d)
+	elif node is Node3D:
+		var scale_3d: Vector3 = node.scale
+		if is_zero_approx(scale_3d.x) or is_zero_approx(scale_3d.y) or is_zero_approx(scale_3d.z):
+			print("Node3D with zero scale component found: ", node.get_path(), " Scale: ", scale_3d)
+
+# Helper function to account for floating-point inaccuracies
+func is_zero_approx(value: float) -> bool:
+	return abs(value) < 0.00001 # You can adjust this threshold

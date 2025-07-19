@@ -7,11 +7,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cmws"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15vtu"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(4096, 4096, 4096, 4096)
+region = Rect2(2048, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3cmws"]
 animations = [{
@@ -29,15 +29,15 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qq82"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1qj3"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(4096, 0, 4096, 4096)
+region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shjhj"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 4096, 4096, 4096)
+region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15vtu"]
 animations = [{
@@ -61,15 +61,15 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8num0"]
 atlas = ExtResource("2_3cmws")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eol87"]
 atlas = ExtResource("2_3cmws")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osfdy"]
 atlas = ExtResource("2_3cmws")
-region = Rect2(0, 4096, 4096, 4096)
+region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1qq82"]
 animations = [{
@@ -95,19 +95,19 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhejb"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1k04"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ff0q4"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(4096, 0, 4096, 4096)
+region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suedn"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 4096, 4096, 4096)
+region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_01hw1"]
 animations = [{
@@ -136,15 +136,15 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbnkr"]
 atlas = ExtResource("2_3cmws")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_stv2l"]
 atlas = ExtResource("2_3cmws")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5kx2"]
 atlas = ExtResource("2_3cmws")
-region = Rect2(0, 4096, 4096, 4096)
+region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d1qj3"]
 animations = [{
@@ -170,19 +170,19 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ql73e"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2yno"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 0, 4096, 4096)
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r740e"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(4096, 0, 4096, 4096)
+region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tp6bc"]
 atlas = ExtResource("1_01hw1")
-region = Rect2(0, 4096, 4096, 4096)
+region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_shjhj"]
 animations = [{
@@ -209,23 +209,23 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xx6o1"]
-atlas = ExtResource("3_15vtu")
-region = Rect2(4096, 0, 4096, 4008)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vi6ko"]
 atlas = ExtResource("3_15vtu")
-region = Rect2(4096, 0, 4096, 4008)
+region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfkiw"]
 atlas = ExtResource("3_15vtu")
-region = Rect2(0, 4008, 4096, 4008)
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx6o1"]
+atlas = ExtResource("3_15vtu")
+region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhejb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xx6o1")
+"texture": SubResource("AtlasTexture_vi6ko")
 }],
 "loop": false,
 "name": &"default",
@@ -233,10 +233,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vi6ko")
+"texture": SubResource("AtlasTexture_tfkiw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tfkiw")
+"texture": SubResource("AtlasTexture_xx6o1")
 }],
 "loop": false,
 "name": &"hit",
@@ -307,13 +307,13 @@ unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
 position = Vector2(164.667, 63)
-scale = Vector2(0.083, 0.083)
+scale = Vector2(0.166, 0.166)
 sprite_frames = SubResource("SpriteFrames_3cmws")
 
 [node name="EnemyStep1Sprite" type="Sprite2D" parent="MarginContainer/VBoxContainer/Step1Container/MarginContainer"]
 texture_filter = 4
 position = Vector2(271.333, 71)
-scale = Vector2(0.083, 0.083)
+scale = Vector2(0.166, 0.166)
 texture = ExtResource("3_15vtu")
 hframes = 2
 vframes = 2
@@ -353,7 +353,7 @@ unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
 position = Vector2(383, 52.333)
-scale = Vector2(0.083, 0.083)
+scale = Vector2(0.166, 0.166)
 sprite_frames = SubResource("SpriteFrames_15vtu")
 animation = &"hit"
 
@@ -361,7 +361,7 @@ animation = &"hit"
 unique_name_in_owner = true
 texture_filter = 4
 position = Vector2(506.333, 72.667)
-scale = Vector2(0.083, 0.083)
+scale = Vector2(0.166, 0.166)
 sprite_frames = SubResource("SpriteFrames_1qq82")
 animation = &"hit"
 
@@ -396,7 +396,7 @@ unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
 position = Vector2(466, 23.667)
-scale = Vector2(0.042, 0.042)
+scale = Vector2(0.084, 0.084)
 sprite_frames = SubResource("SpriteFrames_01hw1")
 animation = &"hit"
 
@@ -404,7 +404,7 @@ animation = &"hit"
 unique_name_in_owner = true
 texture_filter = 4
 position = Vector2(523, 33.333)
-scale = Vector2(0.042, 0.042)
+scale = Vector2(0.084, 0.084)
 sprite_frames = SubResource("SpriteFrames_d1qj3")
 animation = &"hit"
 
@@ -434,14 +434,14 @@ unique_name_in_owner = true
 z_index = 1
 texture_filter = 4
 position = Vector2(476.333, 34.333)
-scale = Vector2(0.042, 0.042)
+scale = Vector2(0.084, 0.084)
 sprite_frames = SubResource("SpriteFrames_shjhj")
 
 [node name="EnemyNextAnimation" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/NextButtonContainer"]
 unique_name_in_owner = true
 texture_filter = 4
 position = Vector2(536.333, 28.167)
-scale = Vector2(0.042, 0.042)
+scale = Vector2(0.084, 0.084)
 sprite_frames = SubResource("SpriteFrames_bhejb")
 animation = &"hit"
 
