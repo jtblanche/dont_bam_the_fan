@@ -4,6 +4,8 @@ class_name PlayerBox
 
 @onready var border_margin_container: MarginContainer = %BorderMarginContainer
 @onready var player_area: PlayerArea = %PlayerArea
+@onready var sub_viewport: SubViewport = %SubViewport
+
 const BASE_Z_INDEX = 0
 const SOLO_Z_INDEX = 100
 
@@ -126,6 +128,7 @@ static var _corner_string_lookup: Dictionary[PlayerBox.Corner, PlayerBox.CornerI
 			),
 		}
 	),
+	Corner.CENTER: CornerInfo.new(),
 }
 
 @export var solo_tween_duration: float = 0.3
@@ -137,10 +140,19 @@ static var _corner_string_lookup: Dictionary[PlayerBox.Corner, PlayerBox.CornerI
 		border_size = new_border_size
 		initialize()
 
+const BASE_VIEWPORT_SIZE = Vector2(1280, 720)
+@export var viewport_size: Vector2 = BASE_VIEWPORT_SIZE:
+	get:
+		return viewport_size
+	set(new_viewport_size):
+		viewport_size = new_viewport_size
+		if sub_viewport != null:
+			sub_viewport.size = viewport_size
+
 @export var solo_margin_size: float = 40
 @export var current_solo_margin_size: float = 0
 
-@export var corner: PlayerBox.Corner = Corner.UNKNOWN:
+@export var corner: PlayerBox.Corner = Corner.CENTER:
 	get:
 		return corner
 	set(new_corner):
@@ -177,6 +189,8 @@ func initialize() -> void:
 	if border_margin_container != null:
 		for theme_property in _all_theme_constants:
 			border_margin_container.remove_theme_constant_override(theme_property)
+		if _corner_info == null:
+			return
 		for theme_property in _corner_info.margin_changes:
 			border_margin_container.add_theme_constant_override(theme_property, border_size)
 	enter_normal()
@@ -288,5 +302,6 @@ func end_game() -> void:
 	player_area.end_game()
 
 func _ready() -> void:
+	sub_viewport.size = viewport_size
 	initialize()
 	player_area.player = player

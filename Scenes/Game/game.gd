@@ -74,12 +74,10 @@ func _update_solo() -> void:
 	set(new_border_size):
 		border_size = new_border_size
 		_update_border_size()
-
 var previous_player_count: int = -1
 func _update_player_boxes():
 	if bottom_box_right_margin == null:
 		return
-	player_top_box_1.corner = PlayerBox.Corner.TOP_LEFT
 	# set player 1:
 	player_top_box_1.player = player1
 	
@@ -87,12 +85,17 @@ func _update_player_boxes():
 	player_top_box_1.show()
 	top_box.show()
 	
-	bottom_box_left_margin.size_flags_stretch_ratio = 11
-	bottom_box_right_margin.size_flags_stretch_ratio = 11
+	# middle is 20 and should take up 5.0 / 12.0
+	# which means 28 is the rest of the space and 28 / 2 = 14
+	bottom_box_left_margin.size_flags_stretch_ratio = 14
+	bottom_box_right_margin.size_flags_stretch_ratio = 14
 	if player1 == null: # 0 Players Have Locked In
 		if previous_player_count == 0:
 			return
 		previous_player_count = 0
+		
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE
+		
 		# update player 1 box margins:
 		top_box_left_margin.hide()
 		top_box_right_margin.hide()
@@ -113,6 +116,11 @@ func _update_player_boxes():
 		if previous_player_count == 1:
 			return
 		previous_player_count = 1
+		
+		# should take up 1/1, but instead it's taking up 1/6th of that less:
+		var scaled_viewport_scale: float = 5.0 / 6.0
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		
 		# update player 1 box margins:
 		top_box_left_margin.show()
 		top_box_right_margin.show()
@@ -129,12 +137,19 @@ func _update_player_boxes():
 		
 		# Add Player Visibility:
 		add_player_bottom_container.show()
+		# middle is 20 so 4 = 1/6 of 24 divided by 2:
 		top_box_left_margin.size_flags_stretch_ratio = 2
 		top_box_right_margin.size_flags_stretch_ratio = 2
 	elif player3 == null: # 2 Players Have Locked In
 		if previous_player_count == 2:
 			return
 		previous_player_count = 2
+		
+		# should take up 1/2, but instead it's taking up 1/6th of that less:
+		var scaled_viewport_scale: float = 5.0 / 12.0
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		
 		# set player 2:
 		player_bottom_box_1.player = player2
 		
@@ -162,12 +177,20 @@ func _update_player_boxes():
 		
 		# Add Player Visibility:
 		add_player_bottom_container.show()
-		top_box_left_margin.size_flags_stretch_ratio = 11
-		top_box_right_margin.size_flags_stretch_ratio = 11
+		# middle is 20 and should take up 5.0 / 12.0
+		# which means 28 is the rest of the space and 28 / 2 = 14
+		top_box_left_margin.size_flags_stretch_ratio = 14
+		top_box_right_margin.size_flags_stretch_ratio = 14
 	elif player4 == null: # 3 Players Have Locked In
 		if previous_player_count == 3:
 			return
 		previous_player_count = 3
+		
+		var scaled_viewport_scale: float = 5.0 / 12.0
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_top_box_2.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		
 		# set player 2:
 		player_top_box_2.player = player2
 		# set player 3:
@@ -193,12 +216,21 @@ func _update_player_boxes():
 		
 		# Add Player Visibility:
 		add_player_bottom_container.show()
-		top_box_left_margin.size_flags_stretch_ratio = 2
-		top_box_right_margin.size_flags_stretch_ratio = 2
+		# middle is 40 and should take up 10.0 / 12.0
+		# which means 8 is the rest of the space and 8 / 2 = 4
+		top_box_left_margin.size_flags_stretch_ratio = 4
+		top_box_right_margin.size_flags_stretch_ratio = 4
 	else: # 4 Players Have Locked In
 		if previous_player_count == 4:
 			return
 		previous_player_count = 4
+		
+		var scaled_viewport_scale: float = 5.0 / 12.0
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_top_box_2.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_2.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		
 		# set player 2:
 		player_top_box_2.player = player2
 		# set player 3:
@@ -247,6 +279,9 @@ func _update_player_boxes_for_game():
 		top_box_left_margin.hide()
 		top_box_right_margin.hide()
 		
+		var scaled_viewport_scale: float = 1.0
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		
 		# update other player boxes' visibility:
 		player_top_box_2.hide()
 		bottom_box.hide()
@@ -255,6 +290,10 @@ func _update_player_boxes_for_game():
 		# player 1 margins:
 		top_box_left_margin.show()
 		top_box_right_margin.show()
+		
+		var scaled_viewport_scale: float = 0.5
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
 		
 		# player 2 box and margins:
 		bottom_box.show()
@@ -273,6 +312,11 @@ func _update_player_boxes_for_game():
 		top_box_left_margin.hide()
 		top_box_right_margin.hide()
 		
+		var scaled_viewport_scale: float = 0.5
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_top_box_2.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		
 		# player 2:
 		player_top_box_2.show()
 		
@@ -288,6 +332,12 @@ func _update_player_boxes_for_game():
 		# update player 1 and 2 box margins:
 		top_box_left_margin.hide()
 		top_box_right_margin.hide()
+		
+		var scaled_viewport_scale: float = 0.5
+		player_top_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_top_box_2.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_1.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
+		player_bottom_box_2.viewport_size = PlayerBox.BASE_VIEWPORT_SIZE * scaled_viewport_scale
 		
 		# player 2:
 		player_top_box_2.show()

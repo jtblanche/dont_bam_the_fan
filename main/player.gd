@@ -18,9 +18,9 @@ static func get_device_id(event: InputEvent) -> int:
 	return event.device
 var _game_in_progress: bool = false
 func start_game() -> void:
+	_game_in_progress = true
 	if _device_id != FAKE_TOUCH_DEVICE_ID:
 		return
-	_game_in_progress = true
 	is_play_guitar_pressed = true
 	is_play_guitar_consumed = true
 	is_attack_enemy_pressed = true

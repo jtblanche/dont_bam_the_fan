@@ -54,10 +54,10 @@ func _set_player_ready() -> void:
 	if player.player_index == 0:
 		start_placeholder_text += "\nPress Start/Enter\nto Begin Game"
 		status_text.remove_theme_font_size_override("normal_font_size")
-		status_text.add_theme_font_size_override("normal_font_size", 30)
+		status_text.add_theme_font_size_override("normal_font_size", 60)
 	else:
 		status_text.remove_theme_font_size_override("normal_font_size")
-		status_text.add_theme_font_size_override("normal_font_size", 40)
+		status_text.add_theme_font_size_override("normal_font_size", 80)
 	status_text.text = start_placeholder_text
 		
 func _set_player_waiting() -> void:
@@ -163,19 +163,41 @@ func _ready() -> void:
 	_set_player_waiting()
 	status_animation_player.play("waiting")
 	enemy_pool.clear()
+	
 	for index in range(5):
 		var new_enemy_container = ENEMY_CONTAINER.instantiate()
-		enemy_area.add_child(new_enemy_container)
 		new_enemy_container.completed.connect(return_enemy_container_to_pool)
 		return_enemy_container_to_pool(new_enemy_container)
+		# Get the AnimationNodeStateMachinePlayback object
+		
+	var state_machine_playback = player_animation_tree.get("parameters/playback")
+
+	# Connect the signals
+	state_machine_playback.animation_node_entered.connect(_on_animation_node_entered)
+	state_machine_playback.animation_node_exited.connect(_on_animation_node_exited)
+
+func _on_animation_node_entered(node: String):
+	# 'node' contains the name of the newly entered animation node
+	print("Entered animation node:", node)
+	# You can add your logic here based on the new state
+
+func _on_animation_node_exited(node: String):
+	# 'node' contains the name of the animation node that was exited
+	print("Exited animation node:", node)
+	# You can add your logic here based on the previous state
 
 func get_new_enemy_container_from_pool():
 	enemy_container = enemy_pool.pop_front()
+	enemy_area.add_child(enemy_container)
+	enemy_container.is_in_scene = true
 	enemy_container.score = score
 	enemy_container.start()
 
 func return_enemy_container_to_pool(old_enemy_container: EnemyContainer):
 	if !enemy_pool.has(old_enemy_container):
+		if old_enemy_container.is_in_scene:
+			enemy_area.remove_child(old_enemy_container)
+		old_enemy_container.is_in_scene = false
 		enemy_pool.append(old_enemy_container)
 
 

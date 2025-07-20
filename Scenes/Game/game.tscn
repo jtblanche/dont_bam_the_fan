@@ -38,7 +38,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_stretch_ratio = 20.0
 border_size = 2
-corner = 0
 
 [node name="PlayerTopBox2" parent="PlayerContainer/TopBox" instance=ExtResource("1_mv0hc")]
 unique_name_in_owner = true
@@ -46,7 +45,6 @@ visible = false
 layout_mode = 2
 size_flags_stretch_ratio = 20.0
 border_size = 2
-corner = 1
 
 [node name="TopBoxRightMargin" type="MarginContainer" parent="PlayerContainer/TopBox"]
 unique_name_in_owner = true
@@ -73,7 +71,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_stretch_ratio = 20.0
 border_size = 2
-corner = 3
 
 [node name="PlayerBottomBox2" parent="PlayerContainer/BottomBox" instance=ExtResource("1_mv0hc")]
 unique_name_in_owner = true
@@ -81,7 +78,6 @@ visible = false
 layout_mode = 2
 size_flags_stretch_ratio = 20.0
 border_size = 2
-corner = 2
 
 [node name="BottomBoxRightMargin" type="MarginContainer" parent="PlayerContainer/BottomBox"]
 unique_name_in_owner = true

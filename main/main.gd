@@ -211,31 +211,3 @@ func _reset() -> void:
 
 func _ready() -> void:
 	_reset()
-	print("Scanning for nodes with zero scale...")
-	find_zero_scale_in_tree(get_tree().root)
-	print("Scan complete.")
-
-func find_zero_scale_in_tree(node: Node):
-	# Check the current node
-	print("object_name: ", node.name)
-	check_node_scale(node)
-
-	# Recursively check children
-	for child in node.get_children():
-		find_zero_scale_in_tree(child)
-
-func check_node_scale(node: Node):
-	if node is Node2D:
-		var scale_2d: Vector2 = node.scale
-		if is_zero_approx(scale_2d.x) or is_zero_approx(scale_2d.y):
-			print("Node2D with zero scale component found: ", node.get_path(), " Scale: ", scale_2d)
-		else:
-			print("Node2D with scale component found: ", node.get_path(), " Scale: ", scale_2d)
-	elif node is Node3D:
-		var scale_3d: Vector3 = node.scale
-		if is_zero_approx(scale_3d.x) or is_zero_approx(scale_3d.y) or is_zero_approx(scale_3d.z):
-			print("Node3D with zero scale component found: ", node.get_path(), " Scale: ", scale_3d)
-
-# Helper function to account for floating-point inaccuracies
-func is_zero_approx(value: float) -> bool:
-	return abs(value) < 0.00001 # You can adjust this threshold

@@ -34,6 +34,8 @@ var FRANKEN_ATLAS: Texture2D = preload("res://Scenes/EnemyArea/Images/FrankenAtl
 var FRANKEN_FAN_ATLAS: Texture2D = preload("res://Scenes/EnemyArea/Images/FrankenFanAtlas.png")
 var KRAKEN_ATLAS: Texture2D = preload("res://Scenes/EnemyArea/Images/KrakenAtlas.png")
 
+@export var is_in_scene: bool = false
+
 @export var initialized: bool = false
 @export var was_hit: bool = false
 @export var enemy_status: EnemyStatus = EnemyStatus.UNKNOWN
@@ -43,6 +45,16 @@ var KRAKEN_ATLAS: Texture2D = preload("res://Scenes/EnemyArea/Images/KrakenAtlas
 @export var was_interacted: bool = false:
 	get:
 		return was_hit or was_serenaded
+
+func _set_franken_fan():
+	enemy_sprite.texture = FRANKEN_FAN_ATLAS
+	sillhouette_sprite.texture = FRANKEN_FAN_ATLAS
+	enemy_sprite.vframes = 2
+	sillhouette_sprite.vframes = 2
+	enemy_sprite.hframes = 2
+	sillhouette_sprite.hframes = 2
+	enemy_sprite.frame = 1
+	sillhouette_sprite.frame = 2
 
 func start():
 	enemy_status = Globals.rng.randi_range(0, 1) as EnemyStatus
@@ -64,14 +76,7 @@ func start():
 					enemy_sprite.frame = 1
 					sillhouette_sprite.frame = 2
 				FriendlyEnemies.FRANKEN_FAN:
-					enemy_sprite.texture = FRANKEN_FAN_ATLAS
-					sillhouette_sprite.texture = FRANKEN_FAN_ATLAS
-					enemy_sprite.vframes = 2
-					sillhouette_sprite.vframes = 2
-					enemy_sprite.hframes = 2
-					sillhouette_sprite.hframes = 2
-					enemy_sprite.frame = 1
-					sillhouette_sprite.frame = 2
+					_set_franken_fan()
 			#enemy_sprite.frame = 2
 			#sillhouette_sprite.frame = 3
 		EnemyContainer.EnemyStatus.ENEMY:
@@ -149,4 +154,6 @@ func _ready():
 	was_serenaded = false
 	was_hit = false
 	initialized = false
+	enemy_status = EnemyStatus.FRIENDLY
+	_set_franken_fan()
 	enemy_animation_player.stop()
